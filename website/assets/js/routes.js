@@ -4,6 +4,9 @@
   const KNOWN_CONTACT_URLS = Object.freeze({
     general: "https://contact.apes.org.uk/help/1463648560",
     reception: "https://contact.apes.org.uk/help/3700316734",
+    shopReceptionCustomerServices:
+      "https://contact.apes.org.uk/help/151000507",
+    shopFraud: "https://contact.apes.org.uk/help/2114397485",
     bookings: "https://contact.apes.org.uk/help/2037047604",
     welfare: "https://contact.apes.org.uk/help/3378058387",
     shelter: "https://contact.apes.org.uk/help/3459567754",
@@ -65,7 +68,7 @@
         "https://www.apes.org.uk/APES_logo_3D_440x250.png",
       ]),
       summary:
-        "Pet Shop sales and service enquiries currently route through APES CIC contact channels until dedicated direct forms are published.",
+        "Pet Shop has dedicated direct forms for Reception and Customer Services, plus a specialist Fraud Team route.",
     }),
   });
 
@@ -705,12 +708,11 @@
         enquiryType: "General shop enquiry",
         label: "Pet Shop General Contact",
         description:
-          "Pet Shop enquiries currently route through APES CIC general contact and are forwarded internally.",
+          "Use this route if you are unsure which Pet Shop team should handle your enquiry.",
         url: KNOWN_CONTACT_URLS.general,
         keywords: ["shop", "general", "pet shop", "routing"],
         categories: ["support", "governance"],
         isFallback: true,
-        divisionPrimary: true,
       },
       {
         id: "shop-management",
@@ -733,16 +735,17 @@
         organisation: "APES Pet Shop",
         organisationSlug: "pet-shop",
         division: "APES Pet Shop Division",
-        department: "Division Reception",
+        department: "Reception and Customer Services",
         roleType: "reception",
-        enquiryType: "Reception contact",
-        label: "Pet Shop Reception",
+        enquiryType: "Reception or customer service enquiry",
+        label: "Pet Shop Reception and Customer Services",
         description:
-          "Reception enquiries for this division are internally routed through APES CIC.",
-        url: KNOWN_CONTACT_URLS.general,
-        keywords: ["reception", "shop desk", "contact point"],
+          "Direct Pet Shop form for reception queries and customer service requests.",
+        url: KNOWN_CONTACT_URLS.shopReceptionCustomerServices,
+        keywords: ["reception", "customer services", "shop desk", "contact point"],
         categories: ["reception", "support"],
-        isFallback: true,
+        isFallback: false,
+        divisionPrimary: true,
       },
       {
         id: "shop-team-leaders",
@@ -783,14 +786,30 @@
         division: "APES Pet Shop Division",
         department: "Customer Support",
         roleType: "support",
-        enquiryType: "Customer support request",
+        enquiryType: "Customer services request",
         label: "Pet Shop Customer Support",
         description:
-          "General customer support for product questions, stock checks and service follow-up.",
-        url: KNOWN_CONTACT_URLS.general,
-        keywords: ["customer support", "stock", "shop enquiry"],
+          "Direct customer services route for product questions, stock checks and service follow-up.",
+        url: KNOWN_CONTACT_URLS.shopReceptionCustomerServices,
+        keywords: ["customer support", "customer services", "stock", "shop enquiry"],
         categories: ["support"],
-        isFallback: true,
+        isFallback: false,
+      },
+      {
+        id: "shop-fraud-team",
+        organisation: "APES Pet Shop",
+        organisationSlug: "pet-shop",
+        division: "APES Pet Shop Division",
+        department: "Fraud Team",
+        roleType: "governance",
+        enquiryType: "Fraud report or concern",
+        label: "Pet Shop Fraud Team",
+        description:
+          "Direct route for suspected fraud, payment scams or suspicious activity linked to Pet Shop services.",
+        url: KNOWN_CONTACT_URLS.shopFraud,
+        keywords: ["fraud", "scam", "payment", "suspicious activity"],
+        categories: ["governance", "support"],
+        isFallback: false,
       },
       {
         id: "shop-complaints",
