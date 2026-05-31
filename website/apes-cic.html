@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>APES CIC Contacts | APES Contact Centre</title>
+    <meta
+      name="description"
+      content="Direct APES CIC management, reception, team leaders and specialist contact routes."
+    >
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body data-page="division" data-org="apes-cic">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="header-row">
+          <a class="brand" href="https://www.apes.org.uk/" target="_blank" rel="noopener noreferrer">
+            <img src="https://www.apes.org.uk/APES_logo_3D_440x250.png" alt="APES CIC logo">
+            <span>
+              <strong>APES Contact Centre</strong>
+              <span>Association of Protecting Exotic Species CIC</span>
+            </span>
+          </a>
+
+          <nav class="nav-row" aria-label="Subsite pages">
+            <a class="nav-link" href="index.html">Contact Hub</a>
+            <a class="nav-link active" href="apes-cic.html">APES CIC</a>
+            <a class="nav-link" href="shelter-rescue.html">Shelter and Rescue</a>
+            <a class="nav-link" href="pet-care-clinic.html">Pet Care Clinic</a>
+            <a class="nav-link" href="pet-shop.html">Pet Shop</a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="main" class="main-sections">
+        <section class="hero">
+          <div class="division-hero-grid">
+            <div class="division-logo-wrap">
+              <img id="divisionLogo" alt="Division logo">
+            </div>
+
+            <div>
+              <span class="eyebrow">Division directory</span>
+              <h1 id="divisionName">APES CIC</h1>
+              <p id="divisionLegalName"></p>
+              <p id="divisionSummary"></p>
+              <div class="hero-actions">
+                <a id="primaryRouteLink" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Open primary division route</a>
+                <a id="divisionWebsiteLink" class="btn btn-subtle" href="#" target="_blank" rel="noopener noreferrer">Visit division website</a>
+              </div>
+            </div>
+          </div>
+
+          <p id="divisionGovernanceNote" class="status-note"></p>
+        </section>
+
+        <section class="panel" aria-labelledby="quick-route-heading">
+          <div class="panel-head">
+            <h2 id="quick-route-heading">Quick route picker</h2>
+            <p>Choose an APES CIC route and open the linked contact form.</p>
+          </div>
+
+          <div class="finder-grid">
+            <div class="field">
+              <label for="divisionRoutePicker">APES CIC route</label>
+              <select id="divisionRoutePicker"></select>
+            </div>
+            <div class="field">
+              <label>Route summary</label>
+              <p id="divisionRouteDescription" class="status-note">Choose a route to preview the contact path for this division.</p>
+              <p id="divisionRouteFallback" class="fallback-note is-hidden"></p>
+            </div>
+            <div class="field">
+              <label>Open route</label>
+              <a id="divisionRouteOpen" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Open selected form</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" aria-labelledby="roles-heading">
+          <div class="panel-head">
+            <h2 id="roles-heading">Role contacts</h2>
+            <p><strong id="divisionRoleCount">0</strong> role routes</p>
+          </div>
+          <div id="divisionRoleCards" class="route-grid" role="list"></div>
+        </section>
+
+        <section class="panel" aria-labelledby="teams-heading">
+          <div class="panel-head">
+            <h2 id="teams-heading">Department and team contacts</h2>
+            <p><strong id="divisionTeamCount">0</strong> team routes</p>
+          </div>
+          <div id="divisionTeamCards" class="route-grid" role="list"></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Copyright 2026 Association of Protecting Exotic Species CIC</span>
+        <nav aria-label="Footer links">
+          <a href="index.html">Contact hub</a>
+          <a href="https://www.apes.org.uk/policies/privacy" target="_blank" rel="noopener noreferrer">Privacy</a>
+          <a href="https://contact.apes.org.uk/staff" target="_blank" rel="noopener noreferrer">Staff access</a>
+        </nav>
+      </footer>
+    </div>
+
+    <script src="assets/js/routes.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/division.js"></script>
+  </body>
+</html>

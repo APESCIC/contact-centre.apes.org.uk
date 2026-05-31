@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>APES Contact Centre | Route Finder Hub</title>
+    <meta
+      name="description"
+      content="APES Contact Centre route finder for APES CIC, Shelter and Rescue, Pet Care Clinic and Pet Shop."
+    >
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body data-page="hub">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="header-row">
+          <a class="brand" href="https://www.apes.org.uk/" target="_blank" rel="noopener noreferrer">
+            <img src="https://www.apes.org.uk/APES_logo_3D_440x250.png" alt="APES CIC logo">
+            <span>
+              <strong>APES Contact Centre</strong>
+              <span>Association of Protecting Exotic Species CIC</span>
+            </span>
+          </a>
+
+          <nav class="nav-row" aria-label="Subsite pages">
+            <a class="nav-link active" href="index.html">Contact Hub</a>
+            <a class="nav-link" href="apes-cic.html">APES CIC</a>
+            <a class="nav-link" href="shelter-rescue.html">Shelter and Rescue</a>
+            <a class="nav-link" href="pet-care-clinic.html">Pet Care Clinic</a>
+            <a class="nav-link" href="pet-shop.html">Pet Shop</a>
+          </nav>
+        </div>
+
+        <div class="notice" role="note" aria-label="Emergency note">
+          <span class="notice-mark" aria-hidden="true">!</span>
+          <p>
+            Choose the right route first time so enquiries reach the correct team quickly. If a person or animal is in immediate danger, call
+            <strong>999</strong>.
+          </p>
+        </div>
+      </header>
+
+      <main id="main" class="main-sections">
+        <section class="hero" aria-labelledby="hub-title">
+          <span class="eyebrow">Small contact subsite</span>
+          <h1 id="hub-title">APES Contact Centre Route Finder</h1>
+          <p>
+            APES CIC centrally governs APES Shelter and Rescue, APES Pet Care Clinic and APES Pet Shop. You can contact APES CIC for oversight matters or contact each division directly for management, reception, team leaders and specialist teams.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://contact.apes.org.uk/help/1463648560" target="_blank" rel="noopener noreferrer">Contact APES CIC</a>
+            <a class="btn btn-danger" href="https://contact.apes.org.uk/help/2938250825" target="_blank" rel="noopener noreferrer">Make a complaint</a>
+            <a class="btn btn-subtle" href="https://contact.apes.org.uk/help/3700316734" target="_blank" rel="noopener noreferrer">Reception</a>
+          </div>
+        </section>
+
+        <section class="panel" aria-labelledby="organisations-heading">
+          <div class="panel-head">
+            <h2 id="organisations-heading">Choose organisation or division</h2>
+            <p>Use logos to identify the correct APES organisation before selecting a route.</p>
+          </div>
+          <div id="organisationCards" class="org-grid" role="list"></div>
+        </section>
+
+        <section class="panel" aria-labelledby="finder-heading">
+          <div class="panel-head">
+            <h2 id="finder-heading">Guided route finder</h2>
+            <p>Step 1 organisation -> Step 2 role or contact type -> Step 3 enquiry route.</p>
+          </div>
+
+          <div class="finder-grid">
+            <div class="field">
+              <label for="finderOrganisation">1. Organisation or division</label>
+              <select id="finderOrganisation">
+                <option value="">Select organisation</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="finderRole">2. Role or contact type</label>
+              <select id="finderRole" disabled>
+                <option value="">Select role</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="finderEnquiry">3. Enquiry type</label>
+              <select id="finderEnquiry" disabled>
+                <option value="">Select enquiry type</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="finderResult" class="finder-result is-hidden" role="status" aria-live="polite">
+            <h3 id="finderRouteTitle"></h3>
+            <p id="finderRouteSummary"></p>
+            <p id="finderRouteDepartment" class="route-detail"></p>
+            <p id="finderRouteFallback" class="fallback-note is-hidden"></p>
+            <div class="hero-actions">
+              <a id="finderRouteLink" class="btn btn-primary" target="_blank" rel="noopener noreferrer" href="#">Open contact form</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" aria-labelledby="routes-heading">
+          <div class="panel-head">
+            <h2 id="routes-heading">Filter all contact routes</h2>
+            <p>
+              Showing <strong id="routeResultCount">0</strong> route options across APES CIC and all divisions.
+            </p>
+          </div>
+
+          <div class="chip-stack" aria-label="Route filters">
+            <div class="field">
+              <label for="routeSearch">Search route labels, descriptions or keywords</label>
+              <input
+                id="routeSearch"
+                type="search"
+                placeholder="Search: welfare, bookings, reception, legal, complaints..."
+              >
+            </div>
+
+            <div>
+              <strong>Organisation filters</strong>
+              <div class="chip-group" role="group" aria-label="Filter by organisation">
+                <button class="chip active" type="button" data-org-filter="all" aria-pressed="true">All</button>
+                <button class="chip" type="button" data-org-filter="apes-cic" aria-pressed="false">APES CIC</button>
+                <button class="chip" type="button" data-org-filter="shelter-rescue" aria-pressed="false">Shelter and Rescue</button>
+                <button class="chip" type="button" data-org-filter="pet-care-clinic" aria-pressed="false">Pet Care Clinic</button>
+                <button class="chip" type="button" data-org-filter="pet-shop" aria-pressed="false">Pet Shop</button>
+              </div>
+            </div>
+
+            <div>
+              <strong>Contact-type filters</strong>
+              <div class="chip-group" role="group" aria-label="Filter by contact type">
+                <button class="chip active" type="button" data-type-filter="all" aria-pressed="true">All types</button>
+                <button class="chip" type="button" data-type-filter="management" aria-pressed="false">Management</button>
+                <button class="chip" type="button" data-type-filter="reception" aria-pressed="false">Reception</button>
+                <button class="chip" type="button" data-type-filter="team-leaders" aria-pressed="false">Team Leaders</button>
+                <button class="chip" type="button" data-type-filter="welfare" aria-pressed="false">Welfare</button>
+                <button class="chip" type="button" data-type-filter="bookings" aria-pressed="false">Bookings</button>
+                <button class="chip" type="button" data-type-filter="support" aria-pressed="false">Support</button>
+                <button class="chip" type="button" data-type-filter="governance" aria-pressed="false">Governance</button>
+                <button class="chip" type="button" id="resetFilters" aria-pressed="false">Reset</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="routeDirectory" class="route-grid" role="list"></div>
+          <p id="noRouteResults" class="status-note is-hidden">
+            No matching routes found. Try broadening your search or resetting the filters.
+          </p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Copyright 2026 Association of Protecting Exotic Species CIC</span>
+        <nav aria-label="Footer links">
+          <a href="https://www.apes.org.uk/about-us" target="_blank" rel="noopener noreferrer">About</a>
+          <a href="https://www.apes.org.uk/donate" target="_blank" rel="noopener noreferrer">Donate</a>
+          <a href="https://www.apes.org.uk/policies/privacy" target="_blank" rel="noopener noreferrer">Privacy</a>
+          <a href="https://contact.apes.org.uk/staff" target="_blank" rel="noopener noreferrer">Staff access</a>
+        </nav>
+      </footer>
+    </div>
+
+    <script src="assets/js/routes.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/hub.js"></script>
+  </body>
+</html>
