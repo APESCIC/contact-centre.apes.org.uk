@@ -114,7 +114,7 @@
 
   function updateQuickRoute(routeId) {
     if (!routeId) {
-      quickOpen.removeAttribute("href");
+      ui.setActionLinkState(quickOpen, false);
       quickDescription.textContent =
         "Choose a route to preview the contact path for this division.";
       quickFallback.classList.add("is-hidden");
@@ -129,8 +129,12 @@
       return;
     }
 
-    quickOpen.href = route.url;
-    quickDescription.textContent = route.description;
+    ui.setActionLinkState(quickOpen, true, route.url);
+    quickDescription.textContent =
+      route.description +
+      " This route is handled by " +
+      route.department +
+      ".";
     if (route.isFallback) {
       quickFallback.textContent =
         "Internally routed: this enquiry currently uses the closest division-level form.";

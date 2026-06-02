@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,22 +59,24 @@
         <section class="panel" aria-labelledby="quick-route-heading">
           <div class="panel-head">
             <h2 id="quick-route-heading">Quick route picker</h2>
-            <p>Choose an APES CIC route and open the linked contact form.</p>
+            <p>Choose an APES CIC route and preview the destination before you open the linked contact form.</p>
           </div>
 
           <div class="finder-grid">
             <div class="field">
               <label for="divisionRoutePicker">APES CIC route</label>
               <select id="divisionRoutePicker"></select>
+              <p class="helper-text">Select the route that best matches your enquiry or escalation.</p>
             </div>
             <div class="field">
-              <label>Route summary</label>
+              <span class="field-title">Route summary</span>
               <p id="divisionRouteDescription" class="status-note">Choose a route to preview the contact path for this division.</p>
               <p id="divisionRouteFallback" class="fallback-note is-hidden"></p>
             </div>
             <div class="field">
-              <label>Open route</label>
-              <a id="divisionRouteOpen" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Open selected form</a>
+              <span class="field-title">Open route</span>
+              <a id="divisionRouteOpen" class="btn btn-primary is-disabled" href="#" aria-disabled="true" target="_blank" rel="noopener noreferrer">Open selected form</a>
+              <p class="helper-text">The button unlocks when a valid route is selected.</p>
             </div>
           </div>
         </section>
@@ -97,11 +99,16 @@
       </main>
 
       <footer class="footer">
-        <span>Copyright 2026 Association of Protecting Exotic Species CIC</span>
-        <nav aria-label="Footer links">
+        <div class="footer-meta">
+          <strong>Association of Protecting Exotic Species CIC</strong>
+          <span>CIC number 16253848 | Registered office: Cross House, Unit 7 Sutton Road, St Helens, WA9 3YH</span>
+          <span class="footer-version">Current website version: <strong>v0.1.0</strong></span>
+        </div>
+        <nav class="footer-links" aria-label="Footer links">
           <a href="index.html">Contact hub</a>
+          <a href="changelog.html">Change Log Hub</a>
           <a href="https://www.apes.org.uk/policies/privacy" target="_blank" rel="noopener noreferrer">Privacy</a>
-          <a href="https://contact.apes.org.uk/staff" target="_blank" rel="noopener noreferrer">Staff access</a>
+          <a href="https://contact.apes.org.uk/staff" target="_blank" rel="noopener noreferrer">Staff access / sign in</a>
         </nav>
       </footer>
     </div>

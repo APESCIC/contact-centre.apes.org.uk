@@ -1,6 +1,8 @@
 (function () {
   "use strict";
 
+  document.body.classList.add("is-interactive");
+
   const data = window.APESContactData;
   if (!data) {
     return;
@@ -107,6 +109,10 @@
     action.href = route.url;
     action.target = "_blank";
     action.rel = "noopener noreferrer";
+    action.setAttribute(
+      "aria-label",
+      "Open contact form for " + route.label + " (" + route.department + ")"
+    );
     action.textContent = "Open contact form";
     actionRow.appendChild(action);
 
@@ -159,6 +165,23 @@
     });
   }
 
+  function setActionLinkState(link, isEnabled, href) {
+    if (!link) {
+      return;
+    }
+
+    if (isEnabled && href) {
+      link.href = href;
+      link.classList.remove("is-disabled");
+      link.setAttribute("aria-disabled", "false");
+      return;
+    }
+
+    link.removeAttribute("href");
+    link.classList.add("is-disabled");
+    link.setAttribute("aria-disabled", "true");
+  }
+
   window.APESContactUI = Object.freeze({
     normaliseText: normaliseText,
     getRoleLabel: getRoleLabel,
@@ -166,5 +189,6 @@
     createRouteCard: createRouteCard,
     applyLogoBySlug: applyLogoBySlug,
     sortByRoleOrder: sortByRoleOrder,
+    setActionLinkState: setActionLinkState,
   });
 })();

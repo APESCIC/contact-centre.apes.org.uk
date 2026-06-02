@@ -28,11 +28,14 @@
   const finderDepartment = document.getElementById("finderRouteDepartment");
   const finderFallback = document.getElementById("finderRouteFallback");
   const finderLink = document.getElementById("finderRouteLink");
+  const finderGuidance = document.getElementById("finderGuidance");
+  const finderPurpose = document.getElementById("finderRoutePurpose");
+  const finderSubmitHint = document.getElementById("finderRouteSubmitHint");
 
   const organisationCards = document.getElementById("organisationCards");
   const routeGrid = document.getElementById("routeDirectory");
   const noResults = document.getElementById("noRouteResults");
-  const resultCount = document.getElementById("routeResultCount");
+  const routeCountStatus = document.getElementById("routeCountStatus");
   const searchInput = document.getElementById("routeSearch");
   const resetFilters = document.getElementById("resetFilters");
 
@@ -50,6 +53,23 @@
   };
 
   const sortedRoutes = ui.sortByRoleOrder(data.ROUTE_CATALOG);
+
+  function resetFinderSummary(message) {
+    finderTitle.textContent = "No route selected yet";
+    finderSummary.textContent =
+      "The route summary will appear here after you complete the three-step selection.";
+    finderDepartment.textContent = "Destination team details will appear here.";
+    finderPurpose.textContent =
+      "Use the selector above to confirm the correct APES route before opening a form.";
+    finderSubmitHint.textContent =
+      "Share only necessary details, avoid unnecessary sensitive uploads, and call 999 for immediate danger.";
+    finderFallback.classList.add("is-hidden");
+    finderFallback.textContent = "";
+    finderGuidance.textContent =
+      message ||
+      "Select an organisation, then a role or contact type, then an enquiry route to enable the contact form button.";
+    ui.setActionLinkState(finderLink, false);
+  }
 
   function fillFinderOrganisations() {
     Object.keys(data.ORG_DETAILS).forEach(function (slug) {
@@ -130,8 +150,9 @@
     });
 
     if (!route) {
-      finderResult.classList.add("is-hidden");
-      finderLink.removeAttribute("href");
+      resetFinderSummary(
+        "Complete all three steps to enable the contact form button."
+      );
       return;
     }
 
@@ -139,7 +160,17 @@
     finderSummary.textContent = route.description;
     finderDepartment.textContent =
       route.organisation + " | " + route.department + " | " + route.enquiryType;
-    finderLink.href = route.url;
+    finderPurpose.textContent =
+      "This route is intended for " +
+      route.enquiryType.toLowerCase() +
+      " and will be handled by " +
+      route.department +
+      ".";
+    finderSubmitHint.textContent =
+      "Submissions go to the named APES team. Include only relevant details and use the privacy policy before sharing personal information.";
+    finderGuidance.textContent =
+      "Route ready. Review the destination and summary below before opening the contact form.";
+    ui.setActionLinkState(finderLink, true, route.url);
 
     if (route.isFallback) {
       finderFallback.textContent =
@@ -150,7 +181,6 @@
       finderFallback.textContent = "";
     }
 
-    finderResult.classList.remove("is-hidden");
   }
 
   function setFilterButtonState(buttons, activeValue, attributeName) {
@@ -246,19 +276,31 @@
       }
     });
 
-    resultCount.textContent = visibleCount.toString();
+    routeCountStatus.textContent =
+      visibleCount.toString() +
+      " route option" +
+      (visibleCount === 1 ? "" : "s") +
+      " shown across APES CIC and all divisions.";
     noResults.classList.toggle("is-hidden", visibleCount > 0);
   }
 
   function attachEvents() {
     finderOrg.addEventListener("change", function () {
       fillFinderRoles(finderOrg.value);
-      finderResult.classList.add("is-hidden");
+      resetFinderSummary(
+        finderOrg.value
+          ? "Choose a role or contact type, then an enquiry route, to continue."
+          : undefined
+      );
     });
 
     finderRole.addEventListener("change", function () {
       fillFinderEnquiries(finderOrg.value, finderRole.value);
-      finderResult.classList.add("is-hidden");
+      resetFinderSummary(
+        finderRole.value
+          ? "Choose an enquiry route to unlock the contact form button."
+          : "Choose a role or contact type, then an enquiry route, to continue."
+      );
     });
 
     finderEnquiry.addEventListener("change", function () {
@@ -308,6 +350,7 @@
     renderOrganisationCards();
     renderRouteCards();
     attachEvents();
+    resetFinderSummary();
     applyFilters();
   }
 

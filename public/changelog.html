@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Change Log Hub | APES Contact Centre</title>
+    <meta
+      name="description"
+      content="Track APES Contact Centre releases, fixes, compliance updates and user-facing improvements."
+    >
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body data-page="changelog">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="header-row">
+          <a class="brand" href="https://www.apes.org.uk/" target="_blank" rel="noopener noreferrer">
+            <img src="https://www.apes.org.uk/APES_logo_3D_440x250.png" alt="APES CIC logo">
+            <span>
+              <strong>APES Contact Centre</strong>
+              <span>Association of Protecting Exotic Species CIC</span>
+            </span>
+          </a>
+
+          <nav class="nav-row" aria-label="Subsite pages">
+            <a class="nav-link" href="index.html">Contact Hub</a>
+            <a class="nav-link" href="apes-cic.html">APES CIC</a>
+            <a class="nav-link" href="shelter-rescue.html">Shelter and Rescue</a>
+            <a class="nav-link" href="pet-care-clinic.html">Pet Care Clinic</a>
+            <a class="nav-link" href="pet-shop.html">Pet Shop</a>
+            <a class="nav-link active" href="changelog.html">Change Log Hub</a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="main" class="main-sections">
+        <section class="hero" aria-labelledby="changelog-title">
+          <span class="eyebrow">Release records</span>
+          <h1 id="changelog-title">Change Log Hub</h1>
+          <p>Track every major release for this website, including updates, fixes, compliance changes, and user-facing improvements.</p>
+          <div class="pill-row">
+            <span class="pill pill-version">Current version v0.1.0</span>
+            <span class="pill pill-status">Stable</span>
+            <span class="pill pill-type">Patch release</span>
+            <span class="pill pill-current">Current release</span>
+          </div>
+        </section>
+
+        <section class="panel" aria-labelledby="release-tools-heading">
+          <div class="panel-head">
+            <h2 id="release-tools-heading">Search and filter releases</h2>
+            <p>Use filters to focus on current, stable, fixed, compliance or accessibility changes.</p>
+          </div>
+
+          <div class="filter-toolbar">
+            <div class="field">
+              <label for="releaseSearch">Search release notes</label>
+              <input id="releaseSearch" type="search" placeholder="Search version, fixes, accessibility, compliance...">
+            </div>
+            <div class="filter-toolbar-actions">
+              <button class="btn btn-ghost" type="button" id="expandAllReleases">Expand all</button>
+              <button class="btn btn-ghost" type="button" id="collapseAllReleases">Collapse all</button>
+            </div>
+          </div>
+
+          <div class="chip-stack">
+            <div class="chip-group" role="group" aria-label="Release filters">
+              <button class="chip active" type="button" data-release-filter="all" aria-pressed="true">All releases</button>
+              <button class="chip" type="button" data-release-filter="current" aria-pressed="false">Current release</button>
+              <button class="chip" type="button" data-release-filter="stable" aria-pressed="false">Stable</button>
+              <button class="chip" type="button" data-release-filter="fixed" aria-pressed="false">Fixed</button>
+              <button class="chip" type="button" data-release-filter="accessibility" aria-pressed="false">Accessibility</button>
+              <button class="chip" type="button" data-release-filter="compliance" aria-pressed="false">Compliance</button>
+              <button class="chip" type="button" data-release-filter="seo" aria-pressed="false">SEO</button>
+              <button class="chip" type="button" data-release-filter="public-facing" aria-pressed="false">Public-facing</button>
+            </div>
+          </div>
+
+          <p id="releaseFilterStatus" class="status-note" aria-live="polite">Showing 1 release record.</p>
+          <p id="releaseEmptyState" class="empty-filter-state is-hidden">No release entries match the current search or filter. Try clearing the search or selecting All releases.</p>
+        </section>
+
+        <section class="release-list" aria-label="Release entries">
+          <details
+            class="release-card"
+            open
+            data-release-tags="current stable changed fixed accessibility compliance seo public-facing"
+          >
+            <summary>
+              <div class="release-summary-top">
+                <h2>v0.1.0</h2>
+                <time datetime="2026-06-02">2026-06-02</time>
+              </div>
+              <div class="pill-row">
+                <span class="pill pill-version">Version v0.1.0</span>
+                <span class="pill pill-status">Stable</span>
+                <span class="pill pill-type">Changed</span>
+                <span class="pill pill-fix">Fix</span>
+                <span class="pill pill-accessibility">Accessibility</span>
+                <span class="pill pill-compliance">Compliance</span>
+                <span class="pill pill-seo">SEO</span>
+                <span class="pill pill-public">Public-facing</span>
+              </div>
+            </summary>
+
+            <div class="release-body">
+              <section>
+                <h3>Summary</h3>
+                <p>Stabilised the APES Contact Centre route finder, widened the site shell to 90% on desktop and tablet layouts, added public fallback routes, and introduced formal version and release records for the website.</p>
+              </section>
+
+              <section>
+                <h3>Detailed changes</h3>
+                <ul>
+                  <li>Updated the shared layout to use a 90% viewport shell on wider screens while keeping mobile spacing readable.</li>
+                  <li>Aligned shared buttons, focus states and section accents with APES teal-led website styling.</li>
+                  <li>Improved the homepage guided route finder with clearer step-by-step help, disabled action states, route summaries and live filter feedback.</li>
+                  <li>Added crawlable direct contact links so essential APES routes remain usable if JavaScript is unavailable.</li>
+                  <li>Added privacy and release-record links, current version display, and APES CIC company details in the footer.</li>
+                  <li>Added canonical and Open Graph metadata for the homepage and created the public Change Log Hub.</li>
+                </ul>
+              </section>
+
+              <section class="details-grid">
+                <div class="details-card">
+                  <h3>Affected areas</h3>
+                  <dl>
+                    <dt>Website</dt>
+                    <dd>APES Contact Centre</dd>
+                    <dt>Page or route</dt>
+                    <dd>Homepage route finder, division contact pages, footer, and Change Log Hub</dd>
+                    <dt>User groups affected</dt>
+                    <dd>Public visitors, supporters, service users, staff needing sign-in, and governance or complaint contacts</dd>
+                    <dt>Public impact</dt>
+                    <dd>Better routing clarity, improved accessibility, clearer fallback links and stronger release transparency</dd>
+                  </dl>
+                </div>
+                <div class="details-card">
+                  <h3>Version decision</h3>
+                  <dl>
+                    <dt>Previous version</dt>
+                    <dd>No formal tracked version</dd>
+                    <dt>New version</dt>
+                    <dd>v0.1.0</dd>
+                    <dt>Version type</dt>
+                    <dd>Patch, stable</dd>
+                    <dt>Reason for version bump</dt>
+                    <dd>Public-facing fixes, accessibility improvements, SEO metadata updates and first formal release records</dd>
+                  </dl>
+                </div>
+              </section>
+
+              <section class="details-grid">
+                <div class="details-card">
+                  <h3>Validation</h3>
+                  <dl>
+                    <dt>Checks run</dt>
+                    <dd>Static HTML, CSS and JavaScript review plus manual browser verification of layout and route interactions</dd>
+                    <dt>Manual checks completed</dt>
+                    <dd>Guided route selection, filter reset behaviour, footer link review, changelog filters, and responsive layout spot checks</dd>
+                    <dt>Known limitations</dt>
+                    <dd>External helpdesk destinations and staff sign-in redirects can only be validated as far as the public links allow from this static site</dd>
+                  </dl>
+                </div>
+                <div class="details-card">
+                  <h3>Rollback notes</h3>
+                  <dl>
+                    <dt>Rollback notes</dt>
+                    <dd>Revert to the previous site export if route links, interactive filters, or footer compliance details are found to be incorrect after deployment.</dd>
+                    <dt>Internal impact</dt>
+                    <dd>No internal-only workflow changes were introduced. Staff sign-in remains on the existing external route.</dd>
+                  </dl>
+                </div>
+              </section>
+            </div>
+          </details>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-meta">
+          <strong>Association of Protecting Exotic Species CIC</strong>
+          <span>CIC number 16253848 | Registered office: Cross House, Unit 7 Sutton Road, St Helens, WA9 3YH</span>
+          <span class="footer-version">Current website version: <strong>v0.1.0</strong></span>
+        </div>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="index.html">Contact hub</a>
+          <a href="changelog.html">Change Log Hub</a>
+          <a href="https://www.apes.org.uk/policies/privacy" target="_blank" rel="noopener noreferrer">Privacy</a>
+          <a href="https://contact.apes.org.uk/staff" target="_blank" rel="noopener noreferrer">Staff access / sign in</a>
+        </nav>
+      </footer>
+    </div>
+
+    <script src="assets/js/changelog.js"></script>
+  </body>
+</html>
