@@ -10,7 +10,7 @@ Codex and other AI coding agents must follow these instructions before, during, 
 
 ## 1. Primary rule
 
-Every website update must be planned, versioned, recorded, validated, checked against APES brand standards, checked against APES Newsroom routing rules where relevant, and reflected in relevant GitHub Issues.
+Every website update must be planned, versioned, recorded, validated, checked against APES brand standards, checked against APES Newsroom routing rules where relevant, checked against the APES universal footer standard, and reflected in relevant GitHub Issues.
 
 Agents must not complete website work without checking whether the following are required:
 
@@ -20,6 +20,8 @@ Agents must not complete website work without checking whether the following are
 4. A GitHub Issue start, progress, or completion update.
 5. An APES website brand and feature standards review.
 6. An APES Newsroom routing check for any news, update, announcement, newsletter, footer, navigation, or article-related change.
+7. An APES universal footer compliance check.
+8. A footer link check for the website donation page, Privacy Policy page, Terms of Service page and Change Log Hub.
 
 A changelog entry is required when the work changes public website content, intranet website content, page structure, forms, buttons, links, menus, navigation, CTAs, styling, layout, themes, branding, visual assets, accessibility, SEO, analytics, tracking, CRM, automation, embedded tools, third-party integrations, scripts, widgets, site configuration, build configuration, deployment configuration, generated website output, security, privacy, safeguarding, legal, compliance, finance, governance, HR, animal welfare content, or any user-visible bug fix.
 
@@ -109,7 +111,161 @@ Required usage:
 
 ---
 
-## 3. Central Newsroom and news routing standard
+## 3. Universal website footer standard
+
+All APES websites, division websites, microsites, intranet pages and website templates must use a consistent green APES footer pattern. The footer is a brand, governance, compliance, donation and release-record component. It must not be treated as decorative or optional.
+
+This standard is based on the approved footer examples shown in the APES Intranet, APES Shelter & Rescue and APES Pet Care Clinic reference screenshots.
+
+### Footer layout requirement
+
+Use one of these approved footer layouts, depending on site size and audience:
+
+1. **Full footer layout** for large websites, portals, intranets and sites with multiple user journeys.
+2. **Compact footer layout** for smaller division websites, service websites and landing sites.
+
+Both layouts must use a deep green or deep teal background and APES-compatible typography, spacing, link styling and contrast. Footer links must be keyboard accessible, visibly focusable and readable against the footer background.
+
+### Full footer layout
+
+Use the full footer where the website has enough routes or support pathways to justify multiple columns.
+
+Required column structure:
+
+* **About column**
+  * Website, organisation or division name.
+  * Short plain-English summary of what the website supports.
+  * Parent organisation name where relevant.
+  * Website version badge or text.
+* **Quick links column**
+  * Main user journey links.
+  * Dashboard, apps hub, forms hub, service hub or equivalent where relevant.
+  * Change Log Hub link.
+* **Forms and support column**
+  * Key support forms.
+  * Incident, safeguarding, technical support, contact or escalation links where relevant.
+* **Legal and governance column**
+  * Privacy Policy link.
+  * Terms of Service link.
+  * Cookie Guidance or Cookie Policy link where relevant.
+  * Owner, review cycle and last reviewed information where relevant.
+
+A lower footer bar must then show copyright, legal identity, website name, version and Change Log Hub link where space allows.
+
+### Compact footer layout
+
+Use the compact footer where the website has fewer routes but still needs brand, legal, donation and release information.
+
+Required structure:
+
+* Website or division name.
+* Short description of the website purpose.
+* Physical address where relevant.
+* Contact details where relevant.
+* Partnership, sponsor or trusted organisation badges where relevant.
+* Essential help links such as Contact page, Open a ticket, Account or Support Hub where relevant.
+* Essential support links such as Donate, Sponsorship Hub or relevant fundraising route.
+* Essential connected links such as APES News, Policies or Search where relevant.
+* A final footer line containing copyright, organisation identity, CIC number, website name and current version.
+* A visible Change Log Hub link in the footer, preferably next to the website version.
+
+### Required footer identity format
+
+Every footer must identify the legal or operating organisation clearly.
+
+Use this model for APES CIC organisation websites:
+
+```txt
+© YYYY Association of Protecting Exotic Species CIC · CIC No: 16253848 · Website Name · v0.0.0
+```
+
+Use this model for APES division or service websites:
+
+```txt
+© YYYY Association of Protecting Exotic Species CIC · CIC No: 16253848 · Division or Website Name · v0.0.0
+```
+
+Use this model where a service website needs an explicit parent organisation statement:
+
+```txt
+Part of Association of Protecting Exotic Species CIC.
+Website version: Website Name v0.0.0 · Change Log Hub
+```
+
+Use `CIC No: 16253848` exactly unless the organisation record is formally changed. Do not omit the CIC number from public-facing APES CIC or division website footers.
+
+### Required footer links
+
+Every APES website footer must always include working links to:
+
+* The website donation page.
+* The Privacy Policy page.
+* The Terms of Service page.
+* The Change Log Hub page.
+
+Where a site uses a policies hub, the footer may link to the policies hub as an additional route, but it must still provide direct footer access to Privacy Policy and Terms of Service unless there is a documented reason not to.
+
+The donation link must point to the current donation page for the specific website or division where one exists. If the division does not have a specific donation page, link to the approved APES parent donation route.
+
+### Change Log Hub footer rule
+
+The Change Log Hub must always be linked from the footer of every APES website.
+
+Preferred labels:
+
+* `Change Log Hub`
+* `Website version: Website Name v0.0.0 · Change Log Hub`
+* `Website Name · v0.0.0 · Change Log Hub`
+
+Do not hide the Change Log Hub only in developer documentation, repository files, comments, release notes or an unlinked route. It must be reachable from the rendered website footer.
+
+### Footer version rule
+
+Every footer must display the current website version using the canonical APES version format.
+
+Accepted examples:
+
+```txt
+v0.0.10 Beta
+v0.5.1b
+APES Pet Care Clinic v0.5.1b
+APES Intranet · v0.2.1b
+```
+
+The displayed footer version must match the canonical version file and the current Change Log Hub entry.
+
+### Footer content rules
+
+Footer content must be site-specific and must not be left as generic template copy.
+
+Required checks:
+
+* Use the correct website name.
+* Use the correct division or organisation name.
+* Use the parent organisation name where the site is part of APES CIC.
+* Use the APES CIC number where the website represents APES CIC or a division of APES CIC.
+* Use the correct current website version.
+* Link the version or nearby text to the Change Log Hub where the design allows.
+* Include donation, Privacy Policy and Terms of Service links.
+* Keep support and governance links accurate for that specific website.
+* Use UK English throughout.
+
+### Footer accessibility and compliance checks
+
+Before completing any website change that touches the footer, navigation, legal pages, versioning, changelog, donation routes or policies, validate that:
+
+* Footer colour contrast is sufficient.
+* Footer links are keyboard reachable and have visible focus states.
+* Link text is descriptive without relying only on colour.
+* Donation, Privacy Policy, Terms of Service and Change Log Hub links return successful pages.
+* The displayed version matches the canonical version source of truth.
+* Copyright year is current.
+* The CIC number is present and accurate where required.
+* Footer layout remains usable on mobile.
+
+---
+
+## 4. Central Newsroom and news routing standard
 
 APES Newsroom must be treated as the single public destination for news, announcements and updates from APES CIC and all operating divisions.
 
@@ -131,7 +287,7 @@ News and updates from APES CIC and our services are now published through APES N
 
 ---
 
-## 4. Planning requirement
+## 5. Planning requirement
 
 At the start of planning, confirm the type of update being worked on.
 
@@ -145,8 +301,10 @@ Determine:
 6. Should the Change Log Hub entry be public, internal or both?
 7. Does the work comply with APES website brand and feature standards?
 8. Does the work affect APES Newsroom routing, news links, newsletter prompts, footer links, navigation or article metadata?
-9. Is there a related GitHub Issue?
-10. Should the GitHub Issue be updated at the start, during progress and at completion?
+9. Does the work comply with the APES universal footer standard?
+10. Are donation, Privacy Policy, Terms of Service and Change Log Hub links present in the footer?
+11. Is there a related GitHub Issue?
+12. Should the GitHub Issue be updated at the start, during progress and at completion?
 
 If the user has not confirmed the update type, ask:
 
@@ -165,7 +323,7 @@ Default assumptions:
 
 ---
 
-## 5. Version numbering standard
+## 6. Version numbering standard
 
 All APES CIC website versions must start with `v`.
 
@@ -213,7 +371,7 @@ When a beta becomes stable, remove the trailing `b` without changing the version
 
 ---
 
-## 6. Change Log Hub and changelog system requirement
+## 7. Change Log Hub and changelog system requirement
 
 All APES websites must have both:
 
@@ -232,7 +390,7 @@ Preferred title:
 Change Log Hub
 ```
 
-If no page exists, create one using the website's routing conventions. Link it from an appropriate website location unless the user confirms it should remain unlisted.
+If no page exists, create one using the website's routing conventions. Link it from an appropriate website location unless the user confirms it should remain unlisted. The footer must always include a Change Log Hub link.
 
 ### Repository `CHANGELOG.md`
 
@@ -244,7 +402,7 @@ The website Change Log Hub page and root-level `CHANGELOG.md` must stay aligned.
 
 ---
 
-## 7. Change Log Hub page design and behaviour
+## 8. Change Log Hub page design and behaviour
 
 Build and maintain Change Log Hub pages using the APES green themed pattern:
 
@@ -270,7 +428,7 @@ Use accessible `<details>` and `<summary>` elements unless the framework has an 
 
 ---
 
-## 8. Change Log Hub entry format
+## 9. Change Log Hub entry format
 
 Use this structure for each release entry:
 
@@ -321,7 +479,7 @@ Use type pills for Added, Changed, Fixed, Removed, Security and Compliance. Use 
 
 ---
 
-## 9. GitHub Issues progress update requirement
+## 10. GitHub Issues progress update requirement
 
 Keep relevant GitHub Issues updated when:
 
@@ -348,6 +506,8 @@ Codex has started work on this issue.
 - Change Log Hub update required: yes / no
 - Root `CHANGELOG.md` update required: yes / no
 - `VERSION` update required: yes / no
+- Universal footer compliance check required: yes / no
+- Required footer links present: donation / Privacy Policy / Terms of Service / Change Log Hub
 
 ### Notes
 
@@ -379,6 +539,8 @@ Codex has started work on this issue.
 - Change Log Hub page:
 - Root `CHANGELOG.md`:
 - `VERSION` file:
+- Footer compliance:
+- Footer required links:
 ```
 
 ### End-of-work update
@@ -401,6 +563,16 @@ Codex has started work on this issue.
 - Change Log Hub page:
 - Root `CHANGELOG.md`:
 - `VERSION` file:
+
+### Footer, brand and routing records
+
+- APES brand compliance:
+- Universal footer compliance:
+- Donation page footer link:
+- Privacy Policy footer link:
+- Terms of Service footer link:
+- Change Log Hub footer link:
+- APES Newsroom routing:
 
 ### Validation
 
@@ -426,21 +598,23 @@ Do not close issues unless explicitly instructed or repository workflow clearly 
 
 ---
 
-## 10. Required workflow
+## 11. Required workflow
 
 For every website task:
 
-1. Understand the change and identify website, files, user-visible impact, technical impact, risk level, version bump, beta status, Change Log Hub location, brand impact, Newsroom routing impact and related GitHub Issue.
+1. Understand the change and identify website, files, user-visible impact, technical impact, risk level, version bump, beta status, Change Log Hub location, brand impact, footer impact, Newsroom routing impact and related GitHub Issue.
 2. Confirm or infer update type and beta status.
 3. Make only the required website change. Avoid bulk rewrites, formatting-only churn and unrelated generated-file changes.
 4. Update the canonical version file.
 5. Update the website Change Log Hub page and root-level `CHANGELOG.md`.
 6. Validate using available build, tests, linting, link checks, accessibility checks, manual page review, form validation and sitemap or robots checks.
-7. Post final GitHub Issue update where relevant, then provide a final response covering version, changelog, validation, brand compliance, Newsroom routing and unresolved risks.
+7. Confirm the footer includes donation, Privacy Policy, Terms of Service and Change Log Hub links.
+8. Confirm the footer shows the correct organisation or division name, parent organisation name where relevant, CIC number, website name and version.
+9. Post final GitHub Issue update where relevant, then provide a final response covering version, changelog, validation, brand compliance, footer compliance, Newsroom routing and unresolved risks.
 
 ---
 
-## 11. Generated website export rule
+## 12. Generated website export rule
 
 Generated files must be treated carefully.
 
@@ -458,7 +632,7 @@ Keep diffs narrow, prefer source files over generated output where the source ex
 
 ---
 
-## 12. Commit and pull request guidance
+## 13. Commit and pull request guidance
 
 Recommended PR checklist:
 
@@ -471,6 +645,9 @@ Recommended PR checklist:
 - [ ] Updated related GitHub Issue during meaningful progress, if applicable
 - [ ] Posted final related GitHub Issue update
 - [ ] Checked APES website brand and feature standards
+- [ ] Checked APES universal footer standard
+- [ ] Confirmed footer includes donation page, Privacy Policy, Terms of Service and Change Log Hub links
+- [ ] Confirmed footer displays organisation or division identity, APES CIC number, website name and version
 - [ ] Checked APES Newsroom routing where news, updates, newsletter, footer, or navigation is affected
 - [ ] Updated canonical version file
 - [ ] Created or updated website Change Log Hub page
@@ -490,11 +667,12 @@ website: update change log hub for v0.0.0
 website: add volunteer page and bump to v0.2.0
 website: fix donation link and bump to v0.1.3
 website: add beta boarding form and bump to v0.3.0b
+website: update footer links and bump to v0.0.0
 ```
 
 ---
 
-## 13. Final self-check before completion
+## 14. Final self-check before completion
 
 Before finishing any website task, check:
 
@@ -511,15 +689,20 @@ Before finishing any website task, check:
 11. Rollback notes included.
 12. Changelog system created or corrected where missing or incorrect.
 13. APES website brand and feature standards checked.
-14. APES Newsroom routing checked where relevant.
-15. Related GitHub Issue updated at start, meaningful progress and end where applicable.
+14. APES universal footer standard checked.
+15. Footer includes donation page, Privacy Policy, Terms of Service and Change Log Hub links.
+16. Footer displays the correct website or division name, APES CIC organisation identity, CIC number, current year and canonical version.
+17. APES Newsroom routing checked where relevant.
+18. Related GitHub Issue updated at start, meaningful progress and end where applicable.
 
 ---
 
-## 14. Non-negotiable instruction
+## 15. Non-negotiable instruction
 
-Do not treat changelog, version updates, APES brand compliance, APES Newsroom routing or related GitHub Issue updates as optional for website work.
+Do not treat changelog, version updates, APES brand compliance, APES universal footer compliance, APES Newsroom routing or related GitHub Issue updates as optional for website work.
 
-If website files change, the website Change Log Hub page, root-level `CHANGELOG.md`, canonical version, APES brand and feature standards, APES Newsroom routing where relevant and related GitHub Issue must be checked.
+If website files change, the website Change Log Hub page, root-level `CHANGELOG.md`, canonical version, APES brand and feature standards, APES universal footer standard, APES Newsroom routing where relevant and related GitHub Issue must be checked.
+
+Every APES website footer must include direct or clearly accessible links to the website donation page, Privacy Policy page, Terms of Service page and Change Log Hub.
 
 Use UK English throughout website content, changelog entries, issue updates and release notes.
