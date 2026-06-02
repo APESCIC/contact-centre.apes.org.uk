@@ -2,6 +2,48 @@
 
 Track every major release for this website, including updates, fixes, compliance changes, and user-facing improvements.
 
+## [v0.2.1] - 2026-06-03
+
+<span class="pill pill-version">Version v0.2.1</span>
+<span class="pill pill-status">Stable</span>
+<span class="pill pill-type">Changed</span>
+<span class="pill pill-fix">Fix</span>
+<span class="pill pill-compliance">Compliance</span>
+<span class="pill pill-public">Public-facing</span>
+
+### Summary
+
+Updated the registered office address across the APES Contact Centre website, footer identity blocks, structured data and release records.
+
+### Detailed changes
+
+- Replaced the previous registered office address in the footer on every public page with 40 Morris Street, St Helens, WA9 3EN.
+- Updated the homepage structured organisation metadata so the public JSON-LD address matches the rendered footer and canonical release records.
+- Bumped the canonical website version from v0.2.0 to v0.2.1 and aligned the Change Log Hub and repository changelog.
+
+### Affected areas
+
+- Website: APES Contact Centre
+- Page or route: All public footers, homepage structured data, Change Log Hub and repository release records
+- Files changed: Public HTML pages, `VERSION`, `CHANGELOG.md`
+- User groups affected: Public visitors, supporters, service users, donors, staff needing sign-in and governance contacts
+- Public impact: Registered office information is now current and consistent across the public site
+- Internal impact: No routing, donation or staff access logic changed in this patch.
+
+### Version decision
+
+- Previous version: v0.2.0
+- New version: v0.2.1
+- Version type: Patch, stable
+- Reason for version bump: Public-facing address correction affecting footer identity, structured data and release records
+
+### Validation
+
+- Checks run: Static content review plus version and footer consistency checks across all public pages
+- Manual checks completed: Footer address review, structured data address review and changelog/version alignment checks
+- Known limitations: External destinations such as Donorbox, helpdesk routes and staff sign-in were not changed by this patch
+- Rollback notes: Restore the previous site export if the registered office address was updated in error or if downstream compliance records need to be reverted
+
 ## [v0.2.0] - 2026-06-02
 
 <span class="pill pill-version">Version v0.2.0</span>
