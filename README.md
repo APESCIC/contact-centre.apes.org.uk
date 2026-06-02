@@ -1,547 +1,360 @@
-# APES Contact Centre Website
+<p align="center">
+  <a href="https://www.apes.org.uk/" target="_blank" rel="noopener noreferrer">
+    <img src="https://www.apes.org.uk/APES_logo_3D_440x250.png" alt="APES CIC Logo" width="220">
+  </a>
+</p>
 
-Official development repository for **contact-centre.apes.org.uk**, the APES Contact Centre website operated by the **Association of Protecting Exotic Species CIC**.
+<h1 align="center">APES Website Repository Template</h1>
 
-This repository is used to support the development, maintenance, improvement and issue tracking of the APES Contact Centre website.
+<p align="center">
+  <strong>Reusable website repository template for APES CIC websites, service sites, microsites, public pages, documentation sites and related front-end projects.</strong>
+</p>
 
-## About the APES Contact Centre
+<p align="center">
+  <img alt="Repository" src="https://img.shields.io/badge/repository-template-2E7D32">
+  <img alt="Theme" src="https://img.shields.io/badge/theme-APES_Habitat-43A047">
+  <img alt="Accessibility" src="https://img.shields.io/badge/accessibility-WCAG_AA_target-00796B">
+  <img alt="Language" src="https://img.shields.io/badge/language-UK_English-00695C">
+  <img alt="Governance" src="https://img.shields.io/badge/governance-change_log_required-005F5F">
+</p>
 
-The APES Contact Centre helps visitors contact the correct person, team or division within APES CIC.
+---
 
-It is intended to provide a clear, structured and accessible route for enquiries, support requests, service questions and urgent contact needs. The website should reduce confusion, improve enquiry routing and help APES respond more effectively to service users, adopters, surrendering owners, volunteers, supporters, partners and members of the public.
+## 🌿 Purpose
 
-## Repository Purpose
+This repository is a starter template for APES CIC website projects. It provides a consistent baseline for public websites, service websites, campaign sites, documentation sites, intranet-facing website exports and related front-end repositories owned or maintained by the Association of Protecting Exotic Species CIC.
 
-This repository helps APES CIC manage the ongoing development and improvement of the APES Contact Centre website.
+Use this template when creating or standardising an APES website repository so that each project starts with:
 
-It is used for:
+* APES CIC website working instructions in `AGENTS.md`.
+* A predictable repository structure.
+* GitHub Issue Forms for bugs and feature updates.
+* APES Habitat design direction and brand expectations.
+* UK English, accessibility, governance, security and data protection expectations.
+* Changelog, versioning and release-record expectations for website work.
 
-* Tracking website bugs and faults
-* Managing contact routing improvements
-* Improving visitor journeys to the correct APES person, team or division
-* Recording content updates
-* Managing enquiry forms and contact pathways
-* Supporting access to live chat, helpdesk and contact centre services
-* Improving accessibility and mobile usability
-* Tracking data protection, consent and privacy-related changes
-* Coordinating development work across APES Workspace
-* Supporting reliable public access to APES contact routes
+---
 
-## Website
+## 🐾 Intended website types
 
-Live website:
+This template can be adapted for:
 
-```text
-https://contact-centre.apes.org.uk
+| Website type | Examples |
+|---|---|
+| Parent organisation site | APES CIC organisation gateway, governance pages and public service routing. |
+| Division or service site | Shelter & Rescue, Pet Care Clinic, Pet Shop, MyAPES or future service websites. |
+| Campaign or microsite | Fundraising appeals, education campaigns, relocation projects or public information campaigns. |
+| Documentation or help site | CareBase, knowledge bases, support centres, policy hubs and user guidance. |
+| Intranet-style website output | Staff or volunteer-facing web interfaces where APES public design patterns are reused. |
+
+---
+
+## 🎨 APES Habitat design direction
+
+APES websites should feel like one connected ecosystem: green led, teal-led, accessible, welfare focused and operationally competent.
+
+### Core principles
+
+* **Recognisable APES identity:** every site should clearly belong to the APES CIC family.
+* **Welfare before sales:** booking, adoption, donation, sponsorship and service journeys must still communicate trust, accountability and animal welfare.
+* **Plain English:** headings, CTAs, form guidance and service copy should be practical, direct and written in UK English.
+* **Accessible by default:** colour contrast, keyboard navigation, readable typography and clear focus states are core requirements.
+* **Reusable components:** buttons, cards, hubs, filters, alerts, forms, footers, policy links, help routes and CTAs should follow shared patterns.
+
+### Recommended colour tokens
+
+```css
+:root {
+  --apes-primary-teal: #008C8C;
+  --apes-deep-teal: #005F5F;
+  --apes-soft-mint: #DDF3EF;
+  --apes-leaf-green: #2E7D32;
+  --apes-rescue-sage: #A7C957;
+  --apes-petcare-aqua: #26B6C8;
+  --apes-warm-sand: #F2E9D8;
+  --apes-charcoal: #263238;
+  --apes-off-white: #F7FAF9;
+  --apes-alert-amber: #F9A825;
+  --apes-donation-coral: #E76F51;
+}
 ```
 
-## Main APES Website
+Use teal as the master APES colour. Service accents may support the user journey, but they must not overpower the shared APES identity.
+
+---
+
+## 🧩 Recommended repository structure
+
+Adapt this structure to the confirmed framework, but keep the repository predictable.
 
 ```text
-https://www.apes.org.uk
+.
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug_report.yml
+│   │   ├── feature_update.yml
+│   │   └── config.yml
+│   ├── workflows/
+│   │   ├── ci.yml
+│   │   └── deploy.yml
+│   ├── pull_request_template.md
+│   └── dependabot.yml
+├── docs/
+│   ├── accessibility/
+│   ├── architecture/
+│   ├── brand/
+│   ├── compliance/
+│   ├── content/
+│   └── decisions/
+├── public/
+│   └── assets/
+│       ├── images/
+│       └── logo/
+├── src/
+│   ├── components/
+│   ├── config/
+│   ├── content/
+│   ├── features/
+│   ├── layouts/
+│   ├── pages/
+│   ├── services/
+│   ├── styles/
+│   └── utils/
+├── tests/
+│   ├── accessibility/
+│   ├── integration/
+│   └── unit/
+├── AGENTS.md
+├── CHANGELOG.md
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── README.md
+├── SECURITY.md
+└── VERSION
 ```
 
-## Main Purpose
+---
 
-The purpose of the APES Contact Centre website is to help visitors reach the correct destination without needing to understand APES’ internal structure.
+## 🚀 Getting started
 
-The website should help route enquiries by:
+Replace these commands with the confirmed stack for the website created from this template.
 
-* Topic
-* Service area
-* Urgency
-* Division
-* Department
-* Team
-* Named role where appropriate
-* Type of support required
-* Whether the matter involves animal welfare, operations, governance, finance, volunteering, adoption, surrender, rescue, complaints or general enquiries
+### 1. Create the repository from this template
 
-## Key Contact Centre Functions
+Use GitHub's **Use this template** option, then rename the new repository to match the website or service.
 
-The website may support:
+### 2. Clone the repository
 
-* General enquiries
-* Rescue enquiries
-* Surrender enquiries
-* Adoption enquiries
-* Foster enquiries
-* Volunteer enquiries
-* Student placement enquiries
-* Donation enquiries
-* Fundraising enquiries
-* Partnership enquiries
-* Media enquiries
-* Pet care enquiries
-* Shelter enquiries
-* Complaints and feedback
-* Safeguarding concerns
-* Data protection enquiries
-* Website support requests
-* Technical support requests
-* Department-specific contact routes
-* Division-specific contact routes
-* Named person contact routing where appropriate
+```bash
+git clone <repository-url>
+cd <repository-name>
+```
 
-## APES Divisions and Service Areas
+### 3. Install dependencies
 
-The contact centre may route visitors to APES services and divisions such as:
+```bash
+npm install
+```
 
-* APES CIC
-* APES Shelter and Rescue
-* APES Pet Care Clinic
-* APES CareBase
-* APES Workspace
-* APES Help Centre
-* APES News
-* APES Network Status
-* MyAPES Portal
-* Volunteering and placements
-* Donations and fundraising
-* Governance and compliance
-* Finance and administration
-* Website and technical support
+### 4. Create the local environment file
 
-Any change affecting contact routing should be checked carefully to ensure visitors are directed to the correct person, team or division.
+```bash
+cp .env.example .env.local
+```
 
-## Issue Tracking
+### 5. Start the development server
 
-GitHub Issues should be used to record and manage:
+```bash
+npm run dev
+```
 
-* Incorrect contact routing
-* Broken forms
-* Failed form submissions
-* Missing enquiry categories
-* Incorrect department or division links
-* Broken links
-* Outdated contact information
-* Incorrect opening times
-* Live chat issues
-* Helpdesk routing issues
-* Accessibility concerns
-* Mobile display issues
-* Confirmation email issues
-* Spam or abuse concerns
-* Data protection concerns
-* Security concerns
-* Content update requests
-* New contact workflow requests
-* Urgent public access issues
+### 6. Run checks before committing
 
-When creating an issue, include as much detail as possible.
+```bash
+npm run lint
+npm run test
+npm run build
+```
 
-Useful information includes:
+---
 
-* Page URL
-* Contact route affected
-* Person, team or division affected
-* Description of the issue
-* Steps to reproduce the issue
-* Expected behaviour
-* Actual behaviour
-* Screenshot or screen recording
-* Device type
-* Browser
-* Operating system
-* Date and time of issue
-* Urgency level
-* Whether the issue affects public users
-* Whether the issue affects animal welfare, rescue, surrender, adoption or urgent support
-* Whether personal data may be involved
-* Any relevant error messages
+## 🔐 Environment variables
 
-## Development Priorities
+Do not commit secrets, credentials, API tokens, payment keys, booking credentials, CRM credentials or live service keys.
 
-Development work should support safe, clear and reliable contact with APES CIC.
+Document required variables in `.env.example` using safe placeholder values only.
 
-Priority should be given to changes that improve:
+| Variable | Purpose | Required | Example |
+|---|---|---:|---|
+| `APP_ENV` | Application environment. | Yes | `local` |
+| `APP_URL` | Local or deployed application URL. | Yes | `http://localhost:3000` |
+| `PUBLIC_SITE_URL` | Public website URL. | Yes | `https://www.example.apes.org.uk` |
+| `NEWSLETTER_SIGNUP_URL` | Newsletter signup route or external provider URL. | If used | `https://www.apesnews.org.uk/` |
+| `CONTACT_EMAIL` | Public contact email. | Yes | `info@apes.org.uk` |
+| `CONTACT_PHONE` | Public contact number. | Yes | `0300 302 0998` |
 
-* Accurate enquiry routing
-* Visitor access to the correct APES person, team or division
-* Animal welfare response pathways
-* Rescue and surrender contact routes
-* Adoption and fostering contact routes
-* Service user clarity
-* Timely support access
-* Public confidence
-* Data protection compliance
-* Privacy and consent handling
-* Accessibility
-* Mobile usability
-* Form reliability
-* Spam protection
-* Security
-* Clear out-of-hours guidance
+---
 
-## Branching Guidance
+## 🛠 GitHub workflow
 
-Suggested branch naming:
+### Branch naming
+
+Use short, descriptive branch names.
 
 ```text
-fix/short-description
-feature/short-description
-form/short-description
-routing/short-description
-team/short-description
-division/short-description
-content/short-description
-policy/short-description
-accessibility/short-description
-security/short-description
+feature/service-card-layout
+feature/change-log-hub
+feature/booking-flow-update
+fix/mobile-navigation-overflow
+fix/accessibility-focus-state
+docs/update-policy-links
+hotfix/contact-details
 ```
 
-Examples:
+### Commit style
+
+Use clear commit messages that explain the change and the reason.
 
 ```text
-fix/general-enquiry-routing-error
-feature-new-division-directory
-form-update-rescue-contact-fields
-routing-volunteer-enquiries
-team-add-fundraising-contact-route
-division-update-shelter-and-rescue-routing
-content-update-public-contact-hours
-policy-update-contact-privacy-notice
-accessibility-improve-form-labels
-security-spam-protection
+website: add service landing page
+website: update booking policy links
+website: fix mobile header navigation
+website: improve contrast on service cards
+website: document website content model
 ```
 
-## Commit Message Guidance
+### Issues
 
-Commit messages should be clear and specific.
+Use GitHub Issues for planned changes, bugs, content work, accessibility improvements, governance tasks and maintenance items.
 
-Examples:
+Issue templates live in:
 
 ```text
-Fix incorrect routing for adoption enquiries
-Add division directory page
-Update contact centre opening hours
-Improve rescue enquiry form guidance
-Add fundraising team contact route
-Correct APES phone number in footer
-Update privacy wording on contact form
-Improve accessibility labels for required fields
-Add confirmation message after form submission
+.github/ISSUE_TEMPLATE/
 ```
 
-## Pull Requests
+Included issue forms:
 
-Pull requests should clearly explain:
+| Template | Use when |
+|---|---|
+| `bug_report.yml` | A defect, regression, unexpected behaviour or operational fault needs triage. |
+| `feature_update.yml` | A new feature, enhancement, workflow change, documentation update or governance requirement is needed. |
+| `config.yml` | Disables blank issues and routes urgent or sensitive matters away from public issue text. |
 
-* What has changed
-* Why the change is needed
-* Which person, team, department, division, form or page is affected
-* Whether the change has been tested
-* Whether personal data handling is affected
-* Whether routing to any APES team or service has changed
-* Any risks or follow-up actions
-* Whether content, policy, legal, safeguarding, data protection or senior review is required
+### Pull requests
 
-Before requesting review, check:
+Every pull request should include:
 
-* The affected page loads correctly
-* Forms submit correctly
-* Required fields work properly
-* Confirmation messages display correctly
-* Emails or tickets are generated where expected
-* Routing sends enquiries to the correct destination
-* Contact routes are accurate
-* Links work as expected
-* Mobile layout has been checked
-* Accessibility has been considered
-* Privacy and consent wording is appropriate
-* No personal data has been committed
-* No credentials, API keys or tokens are included
-* No internal-only information has been published
+* Summary of the change.
+* Linked issue, using closing keywords only where closure is intended.
+* Reason for the change.
+* Screenshots or screen recordings for user interface changes.
+* Accessibility considerations.
+* Security and data protection considerations.
+* Testing completed.
+* Deployment and rollback notes.
+* Changelog and version details for website changes.
 
-## Contact Routing Standards
+---
 
-Contact routing should be:
+## ✅ Definition of done
 
-* Clear
-* Accurate
-* Accessible
-* Easy to understand
-* User-focused
-* Service-specific
-* Maintained regularly
-* Appropriate to the urgency of the enquiry
-* Written in plain British English
-* Designed to avoid unnecessary delays
-* Designed to route visitors to the correct person, team or division
+A website change is not ready to merge until it meets the relevant checklist.
 
-Routing should avoid:
+### Functional quality
 
-* Unclear department names
-* Duplicated enquiry routes
-* Outdated staff or team information
-* Publishing private internal details
-* Collecting unnecessary personal data
-* Confusing visitors with internal jargon
-* Sending urgent animal welfare matters to general inboxes
-* Exposing private email addresses where not required
-* Using unapproved legal, safeguarding or policy wording
+* [ ] Feature meets the agreed acceptance criteria.
+* [ ] User-facing copy is clear, accurate and written in UK English.
+* [ ] Empty, loading, success and error states are handled.
+* [ ] Mobile, tablet and desktop layouts have been checked.
+* [ ] Links, buttons, forms and routes behave as expected.
+* [ ] Public contact details are accurate.
 
-## Suggested Contact Categories
+### Accessibility
 
-The contact centre may include categories such as:
+* [ ] Normal text meets at least **4.5:1** contrast.
+* [ ] Large text and meaningful graphical elements meet at least **3:1** contrast where applicable.
+* [ ] Colour is not the only method used to show meaning, status or urgency.
+* [ ] Keyboard focus is visible and logical.
+* [ ] Form fields have labels, helper text and error messages.
+* [ ] Images and icons have suitable accessible names or alternative text.
+* [ ] Motion is minimal and respects reduced motion preferences.
+* [ ] Pages use one clear `h1` and logical `h2` and `h3` sections.
 
-```text
-General enquiry
-Animal rescue enquiry
-Animal surrender enquiry
-Adoption enquiry
-Fostering enquiry
-Volunteer enquiry
-Student placement enquiry
-Donation enquiry
-Fundraising enquiry
-Pet care enquiry
-Shelter enquiry
-Complaint or feedback
-Website support
-Technical support
-Media enquiry
-Partnership enquiry
-Safeguarding concern
-Data protection enquiry
-Governance enquiry
-Finance enquiry
-Operations enquiry
-```
+### Data protection and security
 
-## Suggested Team and Division Routing
+* [ ] No secrets, credentials, payment keys, personal data or confidential records are committed.
+* [ ] Form submissions collect only necessary information.
+* [ ] Personal data is handled in line with UK GDPR and the Data Protection Act 2018.
+* [ ] Client, supporter, staff, volunteer, welfare, safeguarding, HR, finance and governance data are treated as sensitive by default.
+* [ ] Logs do not expose personal data, booking details or confidential case information.
+* [ ] External links use safe attributes where applicable.
 
-Routing may include destinations such as:
+### Governance and release records
 
-```text
-Animal Welfare Team
-Shelter and Rescue Team
-Adoptions Team
-Surrenders Team
-Fostering Team
-Pet Care Team
-Volunteer Coordination
-Fundraising Team
-Donations Team
-Partnerships Team
-Media and Communications
-Governance Team
-Finance Team
-Operations Team
-Systems and Website Support
-Data Protection Contact
-Safeguarding Contact
-Complaints Contact
-```
+* [ ] Update type has been confirmed or inferred: major, minor or patch.
+* [ ] Beta status has been confirmed where relevant.
+* [ ] Canonical version file has been updated.
+* [ ] Website Change Log Hub page has been created or updated.
+* [ ] Root `CHANGELOG.md` has been created or updated.
+* [ ] Related GitHub Issue has been updated at start, progress and completion points where applicable.
+* [ ] APES Newsroom routing has been checked for news, updates, newsletter prompts, footer links or navigation changes.
 
-## Data Protection and Privacy
+---
 
-Do not commit:
+## 🧪 Testing expectations
 
-* Personal data
-* Contact form submissions
-* Service user information
-* Adoption applicant information
-* Surrender request information
-* Volunteer records
-* Staff records
-* Safeguarding information
-* Complaint records
-* Internal case notes
-* Private animal case information
-* Email exports
-* Helpdesk exports
-* Passwords
-* API keys
-* Credentials
-* Private documents
-* Sensitive operational information
-* Internal-only routing information that should not be public
+Use the strongest practical test coverage for the change.
 
-Any website change involving personal data, privacy notices, consent wording, enquiry forms, complaints, safeguarding, data protection requests or user information should be reviewed by the appropriate APES lead before publication.
+| Change type | Expected checks |
+|---|---|
+| UI component | Unit tests, keyboard check, responsive check and contrast check. |
+| Service page | Content accuracy review, mobile review, link check and metadata check. |
+| Form or booking workflow | Validation tests, error state tests, success state tests and data minimisation review. |
+| Content update | Link check, spelling check, owner check and review date check. |
+| Policy update | Legal or governance review, version check and publication date check. |
+| Payment or billing link | Security review, test mode check and confirmation that no secret key is exposed. |
+| Data handling | Input validation, output escaping, logging review and retention considerations. |
 
-## UK GDPR Considerations
+---
 
-Contact centre development should support UK data protection principles.
+## 🧯 Sensitive information rule
 
-Where relevant, changes should consider:
+Do not open public issues, commits or pull requests containing:
 
-* Lawful, fair and transparent processing
-* Purpose limitation
-* Data minimisation
-* Accuracy
-* Storage limitation
-* Integrity and confidentiality
-* Accountability
-* Clear privacy information
-* Safe handling of personal data
-* Appropriate access controls
-* Clear retention expectations
-* Secure routing of sensitive enquiries
+* Credentials, API keys or tokens.
+* Personal data.
+* Safeguarding details.
+* Animal welfare case details.
+* Client booking records.
+* Payment or billing details.
+* Vulnerability exploit steps that could create immediate risk.
+* HR, finance, governance or legal correspondence.
 
-## Accessibility
+Use approved internal escalation routes for urgent operational, safeguarding, welfare or security matters.
 
-Website updates should consider accessibility for all users.
+---
 
-Where possible, changes should support:
+## 🏢 Organisation
 
-* Clear headings
-* Properly labelled form fields
-* Descriptive links
-* Keyboard-friendly navigation
-* Mobile-friendly layouts
-* Sufficient colour contrast
-* Clear error messages
-* Screen reader compatibility
-* Plain English guidance
-* Logical form order
-* Clear required field indicators
-* Clear descriptions of teams, divisions and enquiry routes
+**Association of Protecting Exotic Species CIC (APES CIC)**  
+CIC No: `16253848`  
+Registered Office: `40 Morris Street, St Helens, WA9 3EN`  
+Main Website: <https://www.apes.org.uk/>  
+Newsroom: <https://www.apesnews.org.uk/>  
+Telephone: `0300 302 0998`
 
-## Security
+---
 
-Security is especially important for contact centre systems because they may collect personal data, route sensitive enquiries or interact with helpdesk systems.
+## 📄 Licence and reuse
 
-Security issues should not be posted publicly if they expose:
+This template and its contents are maintained for APES CIC website development, public service delivery and authorised operational purposes.
 
-* Credentials
-* Private systems
-* Personal data
-* Service user information
-* Form submissions
-* Internal routing rules
-* Helpdesk configuration
-* Safeguarding information
-* Operational vulnerabilities
-* Private staff or volunteer information
+Unless a separate licence file states otherwise, do not reuse APES CIC branding, public service materials, internal documents, source code, operational workflows or service materials outside authorised APES CIC purposes.
 
-If a security issue is found, report it internally to the APES website, systems or data protection lead as soon as possible.
+---
 
-## Suggested GitHub Labels
-
-Useful issue labels may include:
-
-```text
-bug
-forms
-routing
-contact-centre
-team-routing
-division-routing
-live-chat
-helpdesk
-content
-accessibility
-mobile
-security
-privacy
-data-protection
-safeguarding
-complaints
-rescue
-surrender
-adoption
-volunteering
-donations
-fundraising
-governance
-finance
-operations
-urgent
-enhancement
-performance
-needs-review
-compliance
-```
-
-## Suggested Issue Types
-
-Issues may be grouped as:
-
-```text
-Bug report
-Form issue
-Routing issue
-Team update
-Division update
-Content update
-Feature request
-Accessibility issue
-Privacy update
-Security concern
-Helpdesk issue
-Live chat issue
-Mobile issue
-Compliance review
-Urgent public access issue
-```
-
-## Review Requirements
-
-Some changes may need additional review before publication.
-
-Review should be considered where changes affect:
-
-* Contact forms
-* Team or division routing
-* Named person routing
-* Privacy wording
-* Consent wording
-* Personal data collection
-* Data protection requests
-* Safeguarding concerns
-* Complaints processes
-* Rescue or surrender routing
-* Adoption or fostering enquiries
-* Public service descriptions
-* Out-of-hours guidance
-* Emergency or urgent contact wording
-* Helpdesk configuration
-* Automated emails or acknowledgements
-* Any legal, policy or governance wording
-
-## Maintainers
-
-This repository is maintained by APES CIC for the ongoing development and improvement of the APES Contact Centre website.
-
-## Organisation
-
-**Association of Protecting Exotic Species CIC**
-CIC Number: **16253848**
-
-Main website:
-
-```text
-https://www.apes.org.uk
-```
-
-Contact Centre website:
-
-```text
-https://contact-centre.apes.org.uk
-```
-
-Registered office:
-
-```text
-40 Morris Street
-St Helens
-WA9 3EN
-United Kingdom
-```
-
-Main telephone number:
-
-```text
-0300 302 0998
-```
-
-## Licence and Use
-
-This repository is for APES CIC website development and operational use.
-
-Unless a separate licence is added, all website content, branding, written materials, graphics, forms, routing logic, workflows and assets remain the property of the Association of Protecting Exotic Species CIC or their respective rights holders.
-
-## Disclaimer
-
-This repository supports the development of the APES Contact Centre website. It should not be used as a substitute for approved APES policies, internal procedures, legal guidance, safeguarding guidance, data protection advice, veterinary advice or formal animal welfare decision-making.
+<p align="center">
+  <strong>Built to keep APES websites clear, compliant, accessible and welfare focused.</strong>
+</p>
