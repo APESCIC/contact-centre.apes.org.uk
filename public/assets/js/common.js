@@ -3,6 +3,58 @@
 
   document.body.classList.add("is-interactive");
 
+  function initialisePopupLinks() {
+    const popupLinks = Array.from(document.querySelectorAll("[data-popup-url]"));
+    if (!popupLinks.length) {
+      return;
+    }
+
+    popupLinks.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        const url = link.getAttribute("data-popup-url") || link.href;
+        const popupName = link.getAttribute("data-popup-name") || "apesDonationPopup";
+        const width = Number.parseInt(link.getAttribute("data-popup-width"), 10) || 720;
+        const height = Number.parseInt(link.getAttribute("data-popup-height"), 10) || 760;
+        const statusId = link.getAttribute("data-popup-status");
+        const status = statusId ? document.getElementById(statusId) : null;
+        const left = Math.max(0, Math.round((window.screen.width - width) / 2));
+        const top = Math.max(0, Math.round((window.screen.height - height) / 2));
+        const features = [
+          "popup=yes",
+          "noopener=yes",
+          "noreferrer=yes",
+          "resizable=yes",
+          "scrollbars=yes",
+          "width=" + width,
+          "height=" + height,
+          "left=" + left,
+          "top=" + top,
+        ].join(",");
+
+        event.preventDefault();
+        const popup = window.open(url, popupName, features);
+
+        if (popup) {
+          popup.opener = null;
+          popup.focus();
+          if (status) {
+            status.classList.add("is-hidden");
+            status.textContent = "";
+          }
+          return;
+        }
+
+        if (status) {
+          status.classList.remove("is-hidden");
+          status.textContent =
+            "Your browser blocked the donation popup. Use the direct secure donation link below.";
+        }
+      });
+    });
+  }
+
+  initialisePopupLinks();
+
   const data = window.APESContactData;
   if (!data) {
     return;
@@ -190,5 +242,6 @@
     applyLogoBySlug: applyLogoBySlug,
     sortByRoleOrder: sortByRoleOrder,
     setActionLinkState: setActionLinkState,
+    initialisePopupLinks: initialisePopupLinks,
   });
 })();

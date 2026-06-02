@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pet Shop Contacts | APES Contact Centre</title>
+    <title>Terms of Service | APES Contact Centre</title>
     <meta
       name="description"
-      content="Direct Pet Shop management, reception, team leaders and specialist contact routes."
+      content="Read the APES Contact Centre terms of service for public route-finder use, external links and service guidance."
     >
     <link rel="stylesheet" href="assets/css/styles.css">
   </head>
-  <body data-page="division" data-org="pet-shop">
+  <body data-page="terms">
     <a class="skip-link" href="#main">Skip to main content</a>
 
     <div class="site-shell">
@@ -29,72 +29,51 @@
             <a class="nav-link" href="apes-cic.html">APES CIC</a>
             <a class="nav-link" href="shelter-rescue.html">Shelter and Rescue</a>
             <a class="nav-link" href="pet-care-clinic.html">Pet Care Clinic</a>
-            <a class="nav-link active" href="pet-shop.html">Pet Shop</a>
+            <a class="nav-link" href="pet-shop.html">Pet Shop</a>
           </nav>
         </div>
       </header>
 
       <main id="main" class="main-sections">
-        <section class="hero">
-          <div class="division-hero-grid">
-            <div class="division-logo-wrap">
-              <img id="divisionLogo" alt="Division logo">
-            </div>
-
-            <div>
-              <span class="eyebrow">Division directory</span>
-              <h1 id="divisionName">APES Pet Shop</h1>
-              <p id="divisionLegalName"></p>
-              <p id="divisionSummary"></p>
-              <div class="hero-actions">
-                <a id="primaryRouteLink" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Open primary division route</a>
-                <a id="divisionWebsiteLink" class="btn btn-subtle" href="#" target="_blank" rel="noopener noreferrer">Visit division website</a>
-              </div>
-            </div>
-          </div>
-
-          <p id="divisionGovernanceNote" class="status-note"></p>
+        <section class="hero" aria-labelledby="terms-title">
+          <span class="eyebrow">Public website terms</span>
+          <h1 id="terms-title">Terms of Service</h1>
+          <p>
+            These terms apply to the public APES Contact Centre website. They explain how the route finder and support pages may be used, and how external APES or third-party destinations fit into that journey.
+          </p>
         </section>
 
-        <section class="panel" aria-labelledby="quick-route-heading">
+        <section class="panel" aria-labelledby="terms-content-heading">
           <div class="panel-head">
-            <h2 id="quick-route-heading">Quick route picker</h2>
-            <p>Choose a Pet Shop route and preview the destination before you open the linked contact form.</p>
+            <h2 id="terms-content-heading">Using the APES Contact Centre</h2>
+            <p>The Contact Centre is designed to help visitors find the correct route before contacting APES services.</p>
           </div>
-
-          <div class="finder-grid">
-            <div class="field">
-              <label for="divisionRoutePicker">Shop route</label>
-              <select id="divisionRoutePicker"></select>
-              <p class="helper-text">Select the route that best matches customer service, fraud or support needs.</p>
-            </div>
-            <div class="field">
-              <span class="field-title">Route summary</span>
-              <p id="divisionRouteDescription" class="status-note">Choose a route to preview the contact path for this division.</p>
-              <p id="divisionRouteFallback" class="fallback-note is-hidden"></p>
-            </div>
-            <div class="field">
-              <span class="field-title">Open route</span>
-              <a id="divisionRouteOpen" class="btn btn-primary is-disabled" href="#" aria-disabled="true" target="_blank" rel="noopener noreferrer">Open selected form</a>
-              <p class="helper-text">The button unlocks when a valid route is selected.</p>
-            </div>
+          <div class="content-stack">
+            <section>
+              <h2>Purpose of the website</h2>
+              <p>This website provides public information, route guidance and direct links to APES services, forms and related destinations. It is intended to improve contact accuracy and reduce misrouted enquiries.</p>
+            </section>
+            <section>
+              <h2>Using route guidance</h2>
+              <p>Route summaries and directory entries are provided to help you choose the best available contact path. You remain responsible for choosing the route that best matches your enquiry and for checking the details you submit to external services.</p>
+            </section>
+            <section>
+              <h2>Acceptable use</h2>
+              <ul>
+                <li>Use the public routes for genuine enquiries, support needs, complaints, bookings or governance matters.</li>
+                <li>Do not misuse the service, attempt to disrupt the site or submit harmful, unlawful or misleading material.</li>
+                <li>Do not rely on the site for emergency response. Call <strong>999</strong> where immediate danger exists.</li>
+              </ul>
+            </section>
+            <section>
+              <h2>External services and linked websites</h2>
+              <p>Many routes on this site open APES helpdesk pages, staff access, other APES websites or the secure Donorbox donation page. Those destinations may have their own terms, privacy rules, technical controls and availability conditions.</p>
+            </section>
+            <section>
+              <h2>Availability and updates</h2>
+              <p>APES may update route labels, links, legal pages and release information when services, governance requirements or public guidance change. The Change Log Hub records major public website releases for this site.</p>
+            </section>
           </div>
-        </section>
-
-        <section class="panel" aria-labelledby="roles-heading">
-          <div class="panel-head">
-            <h2 id="roles-heading">Role contacts</h2>
-            <p><strong id="divisionRoleCount">0</strong> role routes</p>
-          </div>
-          <div id="divisionRoleCards" class="route-grid" role="list"></div>
-        </section>
-
-        <section class="panel" aria-labelledby="teams-heading">
-          <div class="panel-head">
-            <h2 id="teams-heading">Department and team contacts</h2>
-            <p><strong id="divisionTeamCount">0</strong> team routes</p>
-          </div>
-          <div id="divisionTeamCards" class="route-grid" role="list"></div>
         </section>
       </main>
 
@@ -149,9 +128,5 @@
         </div>
       </footer>
     </div>
-
-    <script src="assets/js/routes.js"></script>
-    <script src="assets/js/common.js"></script>
-    <script src="assets/js/division.js"></script>
   </body>
 </html>

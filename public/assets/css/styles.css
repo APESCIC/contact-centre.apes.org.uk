@@ -733,41 +733,177 @@ summary:focus-visible {
 
 .footer {
   margin: 1.8rem 0 2.4rem;
-  padding: 1.1rem 1.15rem;
-  border: 1px solid var(--border);
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius);
-  background: #ffffff;
-  color: var(--ink-soft);
+  background:
+    linear-gradient(180deg, rgba(10, 74, 72, 0.96) 0%, rgba(0, 95, 95, 0.98) 100%);
+  color: rgba(247, 250, 249, 0.92);
   display: grid;
+  gap: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.9rem;
 }
 
-.footer strong {
-  color: var(--ink);
-}
-
-.footer-meta {
+.footer-card {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.08);
   display: grid;
-  gap: 0.35rem;
-}
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
   gap: 0.75rem;
 }
 
-.footer a {
-  font-weight: 700;
-  color: var(--brand-deep);
+.footer-card h2 {
+  margin: 0;
+  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+  font-size: 1.02rem;
+  color: #ffffff;
 }
 
-.footer-version {
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.35rem;
+.footer-card p,
+.footer-card li,
+.footer-bottom p {
+  margin: 0;
+  color: rgba(247, 250, 249, 0.9);
+}
+
+.footer-card strong,
+.footer-bottom strong {
+  color: #ffffff;
+}
+
+.footer-card .pill {
+  width: fit-content;
+}
+
+.footer-card .pill-version {
+  background: rgba(221, 243, 239, 0.16);
+  color: #ffffff;
+  border-color: rgba(221, 243, 239, 0.32);
+}
+
+.footer-card a,
+.footer-bottom a {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+}
+
+.footer-card a:hover,
+.footer-bottom a:hover {
+  color: var(--apes-soft-mint);
+}
+
+.footer-link-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.footer-small {
+  font-size: 0.92rem;
+}
+
+.footer-bottom {
+  display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding-top: 0.95rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.footer-bottom p {
+  font-size: 0.95rem;
+}
+
+.popup-link {
+  color: var(--brand-deep);
+  font-weight: 700;
+}
+
+.donation-button {
+  background: var(--danger);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.donation-button:hover {
+  background: #cf5b40;
+}
+
+.info-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.info-card {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-muted);
+}
+
+.info-card h3 {
+  margin: 0;
+  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+  font-size: 1.02rem;
+}
+
+.info-card p,
+.info-card ul {
+  margin: 0.65rem 0 0;
+  color: var(--ink-soft);
+}
+
+.info-card ul {
+  padding-left: 1.1rem;
+}
+
+.info-card li + li {
+  margin-top: 0.35rem;
+}
+
+.content-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.content-stack section {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.content-stack h2 {
+  margin: 0;
+  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+}
+
+.content-stack p,
+.content-stack ul {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.content-stack ul {
+  padding-left: 1.1rem;
+}
+
+.content-stack li + li {
+  margin-top: 0.35rem;
 }
 
 .pill-row {
@@ -955,7 +1091,9 @@ summary:focus-visible {
 @media (max-width: 1080px) {
   .route-grid,
   .summary-grid,
-  .details-grid {
+  .details-grid,
+  .footer-grid,
+  .info-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -967,7 +1105,9 @@ summary:focus-visible {
   .org-grid,
   .division-hero-grid,
   .summary-grid,
-  .details-grid {
+  .details-grid,
+  .footer-grid,
+  .info-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1004,6 +1144,11 @@ summary:focus-visible {
 
   .footer-links,
   .filter-toolbar-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
   }

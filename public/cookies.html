@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pet Shop Contacts | APES Contact Centre</title>
+    <title>Cookie Policy | APES Contact Centre</title>
     <meta
       name="description"
-      content="Direct Pet Shop management, reception, team leaders and specialist contact routes."
+      content="Read the APES Contact Centre cookie policy for this static public website and its external linked services."
     >
     <link rel="stylesheet" href="assets/css/styles.css">
   </head>
-  <body data-page="division" data-org="pet-shop">
+  <body data-page="cookies">
     <a class="skip-link" href="#main">Skip to main content</a>
 
     <div class="site-shell">
@@ -29,72 +29,47 @@
             <a class="nav-link" href="apes-cic.html">APES CIC</a>
             <a class="nav-link" href="shelter-rescue.html">Shelter and Rescue</a>
             <a class="nav-link" href="pet-care-clinic.html">Pet Care Clinic</a>
-            <a class="nav-link active" href="pet-shop.html">Pet Shop</a>
+            <a class="nav-link" href="pet-shop.html">Pet Shop</a>
           </nav>
         </div>
       </header>
 
       <main id="main" class="main-sections">
-        <section class="hero">
-          <div class="division-hero-grid">
-            <div class="division-logo-wrap">
-              <img id="divisionLogo" alt="Division logo">
-            </div>
-
-            <div>
-              <span class="eyebrow">Division directory</span>
-              <h1 id="divisionName">APES Pet Shop</h1>
-              <p id="divisionLegalName"></p>
-              <p id="divisionSummary"></p>
-              <div class="hero-actions">
-                <a id="primaryRouteLink" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Open primary division route</a>
-                <a id="divisionWebsiteLink" class="btn btn-subtle" href="#" target="_blank" rel="noopener noreferrer">Visit division website</a>
-              </div>
-            </div>
-          </div>
-
-          <p id="divisionGovernanceNote" class="status-note"></p>
+        <section class="hero" aria-labelledby="cookies-title">
+          <span class="eyebrow">Website guidance</span>
+          <h1 id="cookies-title">Cookie Policy</h1>
+          <p>
+            This page explains the limited cookie and browser-data context for the public APES Contact Centre website and highlights when separate external services may apply their own cookie policies.
+          </p>
         </section>
 
-        <section class="panel" aria-labelledby="quick-route-heading">
+        <section class="panel" aria-labelledby="cookies-content-heading">
           <div class="panel-head">
-            <h2 id="quick-route-heading">Quick route picker</h2>
-            <p>Choose a Pet Shop route and preview the destination before you open the linked contact form.</p>
+            <h2 id="cookies-content-heading">How cookie use works here</h2>
+            <p>This public export is a lightweight route-finding website rather than a logged-in portal or on-site payment system.</p>
           </div>
-
-          <div class="finder-grid">
-            <div class="field">
-              <label for="divisionRoutePicker">Shop route</label>
-              <select id="divisionRoutePicker"></select>
-              <p class="helper-text">Select the route that best matches customer service, fraud or support needs.</p>
-            </div>
-            <div class="field">
-              <span class="field-title">Route summary</span>
-              <p id="divisionRouteDescription" class="status-note">Choose a route to preview the contact path for this division.</p>
-              <p id="divisionRouteFallback" class="fallback-note is-hidden"></p>
-            </div>
-            <div class="field">
-              <span class="field-title">Open route</span>
-              <a id="divisionRouteOpen" class="btn btn-primary is-disabled" href="#" aria-disabled="true" target="_blank" rel="noopener noreferrer">Open selected form</a>
-              <p class="helper-text">The button unlocks when a valid route is selected.</p>
-            </div>
+          <div class="content-stack">
+            <section>
+              <h2>Current site behaviour</h2>
+              <p>The public APES Contact Centre uses HTML, CSS and local JavaScript to render route information, filters, release records and the donation popup behaviour. It is designed to work without on-site account areas or embedded payment forms.</p>
+            </section>
+            <section>
+              <h2>First-party tracking on this export</h2>
+              <p>We have not intentionally added advertising scripts or on-site analytics trackers to this public export. Standard browser and hosting behaviour may still involve cached files, network requests and other routine web-delivery processes.</p>
+            </section>
+            <section>
+              <h2>External services</h2>
+              <p>When you open APES helpdesk routes, staff access, other APES websites or the secure Donorbox donation page, those services may use cookies or similar technologies under their own policies.</p>
+            </section>
+            <section>
+              <h2>Managing cookies</h2>
+              <ul>
+                <li>Use your browser settings if you want to review or clear stored cookie data.</li>
+                <li>Review external-service cookie or privacy notices before submitting information or completing payments.</li>
+                <li>If you disable some browser features, certain linked services may behave differently after you leave this site.</li>
+              </ul>
+            </section>
           </div>
-        </section>
-
-        <section class="panel" aria-labelledby="roles-heading">
-          <div class="panel-head">
-            <h2 id="roles-heading">Role contacts</h2>
-            <p><strong id="divisionRoleCount">0</strong> role routes</p>
-          </div>
-          <div id="divisionRoleCards" class="route-grid" role="list"></div>
-        </section>
-
-        <section class="panel" aria-labelledby="teams-heading">
-          <div class="panel-head">
-            <h2 id="teams-heading">Department and team contacts</h2>
-            <p><strong id="divisionTeamCount">0</strong> team routes</p>
-          </div>
-          <div id="divisionTeamCards" class="route-grid" role="list"></div>
         </section>
       </main>
 
@@ -149,9 +124,5 @@
         </div>
       </footer>
     </div>
-
-    <script src="assets/js/routes.js"></script>
-    <script src="assets/js/common.js"></script>
-    <script src="assets/js/division.js"></script>
   </body>
 </html>
